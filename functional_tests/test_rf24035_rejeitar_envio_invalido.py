@@ -39,7 +39,7 @@ Autor: Bianca Rodrigues Bandeira
 
 # O ator envia o arquivo, mas o nome do arquivo/título não é informado.
 
-# O sistema não registra o comprovante. [RN2] [DÚVIDA D10]
+# O sistema não registra o comprovante. [RN2]
 
 
 # 🟠 [A2] - EXTENSÃO NÃO PERMITIDA
@@ -55,7 +55,7 @@ Autor: Bianca Rodrigues Bandeira
 
 # O ator tenta enviar um arquivo sem extensão.
 
-# O sistema rejeita o envio. [RN3] [DÚVIDA D11]
+# O sistema rejeita o envio. [RN3]
 
 
 # 🟠 [A4] - PAGAMENTO INEXISTENTE
@@ -85,7 +85,7 @@ Autor: Bianca Rodrigues Bandeira
 # 🟣 [RN1] O pagamento deve existir e não estar excluído.
 # 🟣 [RN2] Arquivo válido e nome do arquivo são obrigatórios.
 # 🟣 [RN3] Somente pdf, jpeg, jpg e png são aceitos.
-# 🟣 [RN4] Envio recusado não gera comprovante, arquivo armazenado nem ocorrência no histórico.
+# 🟣 [RN4] Envio recusado não gera comprovante, arquivo armazenado e nem ocorrência no histórico.
 
 
 # [DADOS] DADOS E RESULTADOS ESPERADOS

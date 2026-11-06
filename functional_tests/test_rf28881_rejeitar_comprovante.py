@@ -89,7 +89,6 @@ Autor: Bianca Rodrigues Bandeira
 # O ator volta à tela de cobranças por cooperado.
 
 # O sistema não exibe o comprovante rejeitado como pendente de análise.
-# [DÚVIDA D19]
 
 
 # 🟣 [RN1] Rejeição: status "rejeitado" + motivo informado.

@@ -1,132 +1,183 @@
 '''
-UC003 - Manter cobrança (cadastrar, consultar e atualizar)
+UC001 - Manter cobrança
 
-Objetivo: Permitir que o tesoureiro cadastre uma cobrança, consulte-a e
-atualize seus dados, com validações e verificação de duplicidade.
+Objetivo: Permitir que o tesoureiro possa cadastrar, consultar, alterar e excluir cobranças associadas a um cooperado.
 
 Requisitos:
 - RF23931
 - US - Cadastro de cobrança
 - US - Atualizar cobrança
+- US - Deletar conta/cobrança (RF25929)
 
 Ator:
 - Tesoureiro
 
 Autor: Bianca Rodrigues Bandeira
 
-Observação (parcelas): cobrança NÃO é parcelável. O parcelamento pertence a contas a
+Observação: cobrança NÃO é parcelável. O parcelamento pertence a contas a
 pagar (no banco, cobranças e contas a pagar compartilham a tabela "conta").
 Nos cenários, toda cobrança tem 1 parcela.
-
-Observação (CRUD): os requisitos descrevem criar, consultar (para selecionar
-a cobrança) e atualizar. A EXCLUSÃO de cobrança não tem critério na RF23931.
 '''
 
 # 🟢 [FP] - FLUXO PRINCIPAL
 # ---------------------------------------------------------------
 
-# Pré-condição: o tesoureiro está autenticado.
+# Pré-condição: O tesoureiro está autenticado e existe um cooperado cadastrado.
 
-# [CRIAR] O ator acessa a área de cadastro de cobranças, preenche os campos
-# obrigatórios com dados válidos e seleciona a opção para salvar. [A3]
+# O ator acessa a página de cadastro de cobranças. Ele verifica que o 
+# título da página é "Cadastro de cobrança". Ele observa que existem os campos:
+# - Nome da cobrança
+# - Identificador do cooperado
+# - Valor total
+# - Status
+# - Intervalo
+# - Juros
+# - Tipo de juros
+# - Recorrência (recorrente ou única)
+# - Descrição
+# - Data de lançamento
+# - Opções
+# -- Botão "Salvar"
+# -- Botão "Cancelar"
 
-# O sistema registra a cobrança e exibe a confirmação.
+# O ator preenche os campos obrigatórios e opcionais com os dados da cobrança. [A4] [A5]
 
-# [CONSULTAR] O ator acessa a área de cobranças e localiza a cobrança cadastrada.
+# Ao concluir o cadastro, ele seleciona a opção "Salvar". 
 
-# O sistema exibe os dados da cobrança.
+# O sistema valida os dados conforme as regras. [RN1] [RN2] [RN3]
 
-# O ator verifica que os dados correspondem aos informados no cadastro.
+# O sistema exibe a página de cadastro de cobranças novamente e exibe uma
+# mensagem de sucesso de registro.
 
-# [ATUALIZAR] O ator seleciona a cobrança e altera os campos autorizados. [A1] [A2]
+# O ator seleciona 'Consultar cobranças' no menu.
 
-# O ator seleciona a opção para salvar.
+# O sistema exibe a página de listagem de cobranças.
 
-# O sistema valida os dados alterados [RN2] e salva a atualização.
-
-# O sistema exibe a confirmação da operação.
-
-# [CONSULTAR] O ator consulta a cobrança novamente.
-
-# O ator verifica que os dados refletem as alterações realizadas.
+# O ator verifica que a cobrança cadastrada para o cooperado está na lista.
 
 
-# 🟠 [A1] - ATUALIZAÇÃO COM DADO INVÁLIDO
+# 🟠 [A1] - BUSCAR COBRANÇA
 # ---------------------------------------------------------------
 
-# O ator altera o campo de juros para 150% e tenta salvar.
+# O ator necessita realizar uma busca por cobranças na lista. 
+# Ele acessa a página "Listar cobranças".
 
-# O sistema impede a atualização e informa o erro. [RN2]
+# O sistema exibe a página de listagem de cobranças.
 
-# O ator consulta a cobrança e verifica que os dados originais foram mantidos.
+# O ator seleciona o campo específico para busca e digita o nome da cobrança (ou cooperado).
+
+# O ator seleciona 'Pesquisar'.
+
+# O sistema exibe todas as cobranças que correspondem aos termos que foram digitados.
 
 
-# 🟠 [A2] - ATUALIZAÇÃO QUE VIOLA REGRA DE RECORRÊNCIA/PARCELAS
+## 🟠 [A2] EDITAR COBRANÇA
+# ---------------------------------------------------------------
+# O ator executa [A1].
+
+# O ator seleciona a cobrança na lista e clica no botão para editar.
+
+# O sistema exibe a página de edição de cobranças com os campos 
+# preenchidos com os dados atuais.
+
+# O ator altera os campos desejados (ex: nome, valor ou status) e clica no botão 
+# para salvar. [A6] [A7]
+
+# O sistema valida os dados alterados e salva a atualização. [RN4]
+
+# O sistema exibe uma mensagem de confirmação.
+
+# O ator consulta a cobrança novamente e verifica que os dados refletem as alterações.
+
+
+# 🟠 [A3] EXCLUIR COBRANÇA
 # ---------------------------------------------------------------
 
-# O ator altera a cobrança para recorrente e a quantidade de parcelas para 2.
-# (Cobrança não é parcelável.)
+# O ator decide excluir uma cobrança e executa [A1]. 
 
-# O sistema impede a atualização. [RN2]
+# Ele visualiza a cobrança e seleciona a opção 'Excluir'.
+
+# O sistema verifica se a cobrança pode ser excluída (Apenas contas/cobranças com status "Aberta" ou "Atrasada" podem ser deletadas). 
+
+# O sistema pergunta se o usuário realmente deseja excluir a cobrança.
+
+# O ator confirma a exclusão.
+
+# O sistema exclui a cobrança de maneira lógica (muda o status para inativo/excluído invisível para o usuário). 
+
+# O ator seleciona 'Listar cobranças' no menu.
+
+# O sistema exibe a lista de cobranças.
+
+# O ator verifica que a cobrança excluída não está mais na lista.
 
 
-# 🟠 [A3] - CADASTRO DUPLICADO
+# 🟠 [A4] - CADASTRAR SEM OS CAMPOS OPCIONAIS
 # ---------------------------------------------------------------
 
-# Após o [CRIAR] do FP, o ator tenta cadastrar nova cobrança com os mesmos
-# dados identificadores de duplicidade para o mesmo cooperado.
-# [DÚVIDA D01]
+# No passo de preenchimento do [FP], o ator preenche somente os campos obrigatórios, 
+# deixando vazios "Descrição" e "Data de lançamento".
 
-# O sistema detecta a cobrança ativa existente e impede o cadastro. [RN1]
-
-# O ator verifica que existe apenas uma cobrança com esses dados.
+# O sistema registra a cobrança normalmente e exibe a confirmação. [RN2]
 
 
-# 🟠 [A4] - MESMOS DADOS PARA OUTRO COOPERADO
+# 🟠 [A5] - TENTATIVA DE CADASTRO DUPLICADO
 # ---------------------------------------------------------------
 
-# O ator cadastra os mesmos dados para o cooperado "Ana Maria".
+# O ator tenta cadastrar uma nova cobrança com os mesmos
+# dados identificadores de duplicidade para o mesmo cooperado que já possui uma cobrança ativa.
 
-# O sistema registra a cobrança normalmente. [RN1]
+# O sistema detecta a cobrança ativa existente e impede o cadastro, exibindo mensagem de erro. [RN3]
 
 
-# 🟠 [A5] - DUPLICIDADE COM COBRANÇA NÃO ATIVA
+# 🟠 [A6] - ATUALIZAÇÃO COM DADO INVÁLIDO
 # ---------------------------------------------------------------
 
-# A cobrança existente está com status "Cancelada" e o ator cadastra outra
-# com os mesmos dados.
+# O ator, durante a edição [A2], altera o campo de juros para um valor inválido (ex: 150%) 
+# ou altera a quantidade de parcelas para 2.
 
-# O sistema registra a cobrança normalmente.
+# O sistema impede a atualização, informa o erro e mantém os dados originais.
 
 
-# 🟠 [A6] - ATUALIZAR O STATUS PARA "CANCELADA"
+# 🟠 [A7] - ATUALIZAR O STATUS PARA "CANCELADA"
 # ---------------------------------------------------------------
 
-# O ator altera o status para "Cancelada" (valor permitido) e salva.
+# O ator, durante a edição [A2], altera o status da cobrança para "Cancelada" e salva.
 
-# O sistema salva a atualização e exibe a confirmação.
+# O sistema salva a atualização e exibe a confirmação sem exigir exclusão.
 
 
-# 🟠 [A7] - EXCLUIR COBRANÇA
+# 🟣 [RN1] CAMPOS OBRIGATÓRIOS
 # ---------------------------------------------------------------
+# Nome, identificador do cooperado, valor total, status, quantidade de
+# parcelas, intervalo, juros e tipo de juros são obrigatórios.
 
-# Operação não descrita nos requisitos da Feature 02. Aguardando resposta.
-# [DÚVIDA D05]
+# 🟣 [RN2] CAMPOS OPCIONAIS E VALORES PADRÃO
+# ---------------------------------------------------------------
+# Descrição e data de lançamento podem ficar vazios.
+# Sem recorrência informada, a cobrança é considerada não recorrente (única).
 
+# 🟣 [RN3] VALIDAÇÃO DE DUPLICIDADE
+# ---------------------------------------------------------------
+# Não pode haver cobrança ativa do mesmo cooperado com os mesmos dados identificadores de duplicidade.
+# Se a cobrança existente estiver com status "Cancelada", o sistema permite o cadastro de uma nova.
 
-# 🟣 [RN1] Não pode haver cobrança ativa do mesmo cooperado com os mesmos dados identificadores de duplicidade.
-# 🟣 [RN2] A atualização aplica as validações correspondentes (campos obrigatórios, status, tipo de juros, parcelas, juros, recorrência e intervalo).
+# 🟣 [RN4] REGRAS DE ATUALIZAÇÃO
+# ---------------------------------------------------------------
+# A atualização aplica as mesmas validações de criação (campos obrigatórios, status, tipo de juros, parcelas, juros, recorrência e intervalo). Não é permitido alterar uma cobrança para ter mais de 1 parcela.
 
 
 # [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
-# Cadastro: nome "Taxa de manutenção"; Ana Maria; valor 200,00; status Aberta;
-# 1 parcela; intervalo 30; juros 1%; tipo simples.
-# Atualização válida: nome "Taxa de manutenção 2026"; valor 250,00.
+# Dados de teste (fictícios):
+# - Nome: "Mensalidade novembro/2026"; Cooperado: "Carlos Mendes"
+# - Valor total: 300,00; Status: Aberta; Parcelas: 1; Intervalo: 30
+# - Juros: 2%; Tipo de juros: simples
+# - Descrição: "Cobrança de teste"; Data de lançamento: 05/11/2026
 #
-# Resultado esperado:
-# - Após criar: cobrança consultável com os dados originais.
-# - Após atualizar com dados válidos: dados novos exibidos.
-# - Após atualizar com dados inválidos: dados anteriores mantidos.
-# - Duplicata para o mesmo cooperado: NÃO registrada.
+# Resultado esperado (Cadastro/Edição):
+# - Cobrança consultável com os dados informados.
+#
+# Resultado esperado (Exclusão):
+# - Cobrança removida da listagem de visualização do tesoureiro.
