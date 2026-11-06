@@ -23,7 +23,7 @@ Autor: Bianca Rodrigues Bandeira
 # O ator acessa a tela de cobranças por cooperado, seleciona a cobrança com
 # comprovante e solicita a visualização.
 
-# O sistema exibe o comprovante e as opções "aprovado" e "rejeitado".
+# O sistema exibe o comprovante e as opções "confirmar pagamento" e "rejeitado".
 
 # O ator seleciona "rejeitado".
 
@@ -64,7 +64,7 @@ Autor: Bianca Rodrigues Bandeira
 # O sistema trata como vazio e não processa a rejeição. [RN5]
 
 
-# 🟠 [A3] - AÇÃO DIFERENTE DE "aprovado" E "rejeitado"
+# 🟠 [A3] - AÇÃO DIFERENTE DE "confirmar pagamento" E "rejeitado"
 # ---------------------------------------------------------------
 
 # Uma decisão é enviada com valor diferente (ex.: "pendente", "cancelado") ou vazio.
@@ -96,7 +96,7 @@ Autor: Bianca Rodrigues Bandeira
 # 🟣 [RN3] Exclusão lógica: marcar como excluído, sem exclusão física.
 # 🟣 [RN4] Data de pagamento da parcela passa a nulo.
 # 🟣 [RN5] Motivo de rejeição obrigatório.
-# 🟣 [RN6] Somente as ações "aprovado" e "rejeitado" são aceitas.
+# 🟣 [RN6] Somente as ações "confirmar pagamento" e "rejeitado" são aceitas.
 
 
 # [DADOS] DADOS E RESULTADOS ESPERADOS

@@ -132,6 +132,6 @@ Nos cenários, toda cobrança tem 1 parcela.
 # | Sim        | 2        | 30        | Impedida                    |
 # | Sim        | 1        | 0         | Impedida                    |
 # | Não        | 3        | 30        | Impedida                    |
-# | Não        | 1        | 30        | Cadastrada (única) |
+# | Não        | 1        | 30        | Cadastrada (única)          |
 #
 # Entradas inválidas: cobrança NÃO registrada, com aviso ao usuário.
