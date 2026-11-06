@@ -5,8 +5,7 @@ Objetivo: Permitir que o tesoureiro cadastre uma nova cobrança associada a um
 cooperado, com campos obrigatórios e opcionais, recebendo uma confirmação.
 
 Requisitos:
-- Feature 02
-- CA01, CA02, CA03, CA04, CA07
+- RF23931
 - US - Cadastro de cobrança
 
 Ator:
@@ -35,12 +34,12 @@ Nos cenários, toda cobrança tem 1 parcela.
 # - Intervalo (obrigatório)
 # - Juros (obrigatório)
 # - Tipo de juros (obrigatório)
-# - Recorrência (obrigatório)
+# - Recorrência (obrigatório) (recorrente ou única)
 # - Descrição (opcional)
 # - Data de lançamento (opcional)
 # - Opções: botão para salvar
 
-# O ator preenche todos os campos obrigatórios e os opcionais com dados válidos. [A1] [A2] [A3]
+# O ator preenche todos os campos obrigatórios e os opcionais com dados válidos. [A1] [A2]
 
 # O ator seleciona a opção para salvar.
 
@@ -59,17 +58,7 @@ Nos cenários, toda cobrança tem 1 parcela.
 # O sistema registra a cobrança normalmente e exibe a confirmação. [RN2]
 
 
-# 🟠 [A2] - RECORRÊNCIA NÃO INFORMADA
-# ---------------------------------------------------------------
-
-# O ator não informa o campo de recorrência.
-
-# O sistema registra a cobrança como NÃO recorrente (única). [RN3]
-
-# O ator verifica que a cobrança registrada é não recorrente.
-
-
-# 🟠 [A3] - COBRANÇA RECORRENTE VÁLIDA
+# 🟠 [A2] - COBRANÇA RECORRENTE VÁLIDA
 # ---------------------------------------------------------------
 
 # O ator marca a cobrança como recorrente, informa 1 parcela e intervalo diferente de zero.
@@ -91,10 +80,10 @@ Nos cenários, toda cobrança tem 1 parcela.
 # 🟣 [RN3] VALOR PADRÃO DA RECORRÊNCIA
 # ---------------------------------------------------------------
 
-# Sem recorrência informada, a cobrança é considerada não recorrente.
+# Sem recorrência informada, a cobrança é considerada não recorrente (única).
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
 # Dados de teste (fictícios):

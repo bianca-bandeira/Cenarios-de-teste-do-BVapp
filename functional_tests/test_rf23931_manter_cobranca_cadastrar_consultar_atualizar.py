@@ -5,8 +5,7 @@ Objetivo: Permitir que o tesoureiro cadastre uma cobrança, consulte-a e
 atualize seus dados, com validações e verificação de duplicidade.
 
 Requisitos:
-- Feature 02
-- CA10, CA11 (e regras de validação dos CA01 a CA08)
+- RF23931
 - US - Cadastro de cobrança
 - US - Atualizar cobrança
 
@@ -20,8 +19,7 @@ pagar (no banco, cobranças e contas a pagar compartilham a tabela "conta").
 Nos cenários, toda cobrança tem 1 parcela.
 
 Observação (CRUD): os requisitos descrevem criar, consultar (para selecionar
-a cobrança) e atualizar. A EXCLUSÃO de cobrança não tem critério na Feature
-02.
+a cobrança) e atualizar. A EXCLUSÃO de cobrança não tem critério na RF23931.
 '''
 
 # 🟢 [FP] - FLUXO PRINCIPAL
@@ -117,11 +115,10 @@ a cobrança) e atualizar. A EXCLUSÃO de cobrança não tem critério na Feature
 
 
 # 🟣 [RN1] Não pode haver cobrança ativa do mesmo cooperado com os mesmos dados identificadores de duplicidade.
-# 🟣 [RN2] A atualização aplica as validações correspondentes (campos
-#          obrigatórios, status, tipo de juros, parcelas, juros, recorrência e intervalo).
+# 🟣 [RN2] A atualização aplica as validações correspondentes (campos obrigatórios, status, tipo de juros, parcelas, juros, recorrência e intervalo).
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
 # Cadastro: nome "Taxa de manutenção"; Ana Maria; valor 200,00; status Aberta;

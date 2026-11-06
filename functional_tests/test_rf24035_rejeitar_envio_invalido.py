@@ -6,8 +6,7 @@ válido, o arquivo ou seu nome não forem informados, ou a extensão não for
 permitida.
 
 Requisitos:
-- Feature 03
-- CA01, CA02, CA03
+- RF24035
 - US - Anexar comprovante de pagamento
 - US - Anexar comprovante de pagamento de cobrança
 
@@ -89,7 +88,7 @@ Autor: Bianca Rodrigues Bandeira
 # 🟣 [RN4] Envio recusado não gera comprovante, arquivo armazenado nem ocorrência no histórico.
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
 # Dados de teste: pagamento 1 (ativo); pagamento 2 (excluído); arquivos:

@@ -6,8 +6,7 @@ conta/cobrança, com armazenamento do arquivo, registro das informações e
 registro no histórico da conta.
 
 Requisitos:
-- Feature 03
-- CA01, CA02, CA03, CA04, CA05, CA06, CA07, CA08, CA09
+- RF24035
 - US - Anexar comprovante de pagamento
 - US - Anexar comprovante de pagamento de cobrança
 
@@ -26,8 +25,7 @@ Autor: Bianca Rodrigues Bandeira
 
 # O sistema exibe a opção de anexar comprovante.
 
-# O ator informa o título do comprovante e a descrição (opcional) e seleciona
-# o arquivo "comprovante março #1.pdf". [A1] [A2] [A3] [A4]
+# O ator informa o título do comprovante e a descrição (opcional) e seleciona o arquivo "comprovante março #1.pdf". [A1] [A2] [A3]
 
 # O ator confirma o envio.
 
@@ -82,7 +80,7 @@ Autor: Bianca Rodrigues Bandeira
 # 🟣 [RN3] Extensões permitidas: pdf, jpeg, jpg e png.
 # 🟣 [RN5] Registrar: título, descrição (quando informada), formato, caminho,identificador do pagamento, identificador do usuário e status.
 # 🟣 [RN6] Após validar, armazenar o arquivo e registrar o caminho.
-# 🟣 [RN7] Status = "pendente".
+# 🟣 [RN7] Status = "pendente", após anexar o comprovante.
 # 🟣 [RN8] Registrar ocorrência no histórico da conta (usuário e descrição).
 # 🟣 [RN9] Concluir e disponibilizar o comprovante vinculado ao pagamento.
 

@@ -5,8 +5,7 @@ Objetivo: Permitir que o tesoureiro consulte as cobranças de um cooperado e
 que o cooperado consulte seu próprio histórico, sem registros excluídos.
 
 Requisitos:
-- Feature 05
-- CA01, CA02
+- RF23934
 - US - Visualização de histórico de cobranças de cooperados
 - US - Visualização de histórico pessoal de cobranças do cooperado
 
@@ -68,7 +67,7 @@ Autor: Bianca Rodrigues Bandeira
 # 🟣 [RN3] O cooperado vê somente as cobranças do seu próprio identificador.
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
 # Dados de teste:

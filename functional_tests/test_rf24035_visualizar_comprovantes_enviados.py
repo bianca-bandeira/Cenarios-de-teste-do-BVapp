@@ -5,8 +5,7 @@ Objetivo: Permitir que o tesoureiro consulte, na área de cobrança por
 cooperado, os comprovantes enviados, identificando pagamento, conta e usuário.
 
 Requisitos:
-- Feature 03
-- CA05, CA09
+- RF24035
 - US - Visualizar comprovantes de pagamentos de contas e cobranças
 
 Ator:
@@ -61,7 +60,7 @@ Autor: Bianca Rodrigues Bandeira
 # A listagem identifica pagamento, conta e usuário responsável pelo envio.
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
 # Dados de teste:

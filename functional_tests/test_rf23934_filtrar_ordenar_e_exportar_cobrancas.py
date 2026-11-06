@@ -5,8 +5,7 @@ Objetivo: Permitir que o tesoureiro filtre as cobranças de um cooperado por
 critérios opcionais, ordene os resultados e exporte em PDF e CSV.
 
 Requisitos:
-- Feature 05
-- CA03, CA04, CA05
+- RF23934
 - US - Filtragem e Exportação das cobranças do cooperado
 
 Ator:
@@ -22,9 +21,7 @@ Autor: Bianca Rodrigues Bandeira
 # cooperado carlos Mendes, que possui as cobranças C1, C2 e C3 e uma cobrança
 # excluída (ver DADOS).
 
-# O ator verifica que existem os filtros opcionais: nome, descrição, tipo,
-# status, intervalo (mín/máx), recorrência, quantidade de parcelas (mín/máx),
-# juros (mín/máx), tipo de juros, valor total (mín/máx) e período de
+# O ator verifica que existem os filtros opcionais: nome, status, intervalo (mín/máx), recorrência, valor total (mín/máx) e período de
 # lançamento. [RN1]
 
 # O ator não informa nenhum filtro.
@@ -57,7 +54,6 @@ Autor: Bianca Rodrigues Bandeira
 
 # O ator aplica, um por vez:
 # - valor total mínimo 200 e máximo 600 => C2 e C3
-# - quantidade mínima de parcelas 2 => C2 e C3
 # - tipo de juros "composto" => C3
 # - período de lançamento 01/10/2026 a 31/10/2026 => C2
 # - recorrência "sim" => C1
@@ -114,16 +110,15 @@ Autor: Bianca Rodrigues Bandeira
 # 🟣 [RN4] Registros excluídos nunca são exibidos.
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
-# Cobranças do COOP-001 (fictícias):
-# | ID | Nome            | Status   | Parc. | Interv. | Recorr. | Juros | Tipo     | Valor | Lançamento |
-# |----|-----------------|----------|-------|---------|---------|-------|----------|-------|------------|
-# | C1 | Mensalidade nov | Aberta   | 1     | 30      | Sim     | 0     | simples  | 100   | 01/11/2026 |
-# | C2 | Taxa manutenção | Paga     | 3     | 30      | Não     | 2     | simples  | 300   | 05/10/2026 |
-# | C3 | Multa           | Atrasada | 2     | 15      | Não     | 5     | composto | 500   | 20/09/2026 |
-# | C4 | Antiga          | Aberta   | (excluída, nunca exibida)                                  |
+# Cobranças do Daniel (fictícias):
+# | ID | Nome            | Status   | Interv. | Recorr. | Valor | Lançamento |
+# |----|-----------------|----------|---------|---------|-------|------------|
+# | C1 | Mensalidade nov | Aberta   | 30      | Sim     | 100   | 01/11/2026 |
+# | C2 | Taxa manutenção | Paga     | 30      | Não     | 300   | 05/10/2026 |
+# | C3 | Multa           | Atrasada | 15      | Não     | 500   | 20/09/2026 |
+# | C4 | Antiga          | Aberta   | (excluída, nunca exibida)              |
 #
-# Resultado esperado: os resultados descritos em cada fluxo acima; exportação
-# em PDF e CSV com as cobranças apresentadas (conteúdo: DÚVIDA D25).
+# Resultado esperado: os resultados descritos em cada fluxo acima;

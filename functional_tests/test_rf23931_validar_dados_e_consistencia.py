@@ -6,9 +6,7 @@ obrigatórios vazios, valores fora do permitido ou inconsistência entre
 recorrência, parcelas e intervalo.
 
 Requisitos:
-- Feature 02
-- CA01, CA03, CA04, CA05, CA06, CA07, CA08
-- (CA09 trata de cobrança parcelada, que não se aplica a cobranças: D27)
+- RF23931
 - US - Cadastro de cobrança
 
 Ator:
@@ -123,7 +121,7 @@ Nos cenários, toda cobrança tem 1 parcela.
 # 🟣 [RN8] Recorrência não informada = não recorrente.
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
 # Valores de borda: juros -1, 0, 100, 101; parcelas -1.
@@ -134,6 +132,6 @@ Nos cenários, toda cobrança tem 1 parcela.
 # | Sim        | 2        | 30        | Impedida                    |
 # | Sim        | 1        | 0         | Impedida                    |
 # | Não        | 3        | 30        | Impedida                    |
-# | Não        | 1        | 30        | Cadastrada (não recorrente/única ) |
+# | Não        | 1        | 30        | Cadastrada (única) |
 #
 # Entradas inválidas: cobrança NÃO registrada, com aviso ao usuário.

@@ -6,8 +6,7 @@ com exclusão lógica e remoção da data de pagamento; e garantir que decisões
 inválidas ou sem motivo não sejam processadas.
 
 Requisitos:
-- Feature 04
-- CA01, CA05, CA06, CA07, CA08, CA09, CA10, CA11
+- RF28881
 - US - Visualizar comprovante de cobrança
 
 Ator:
@@ -101,7 +100,7 @@ Autor: Bianca Rodrigues Bandeira
 # 🟣 [RN6] Somente as ações "aprovado" e "rejeitado" são aceitas.
 
 
-# 📦 [DADOS] DADOS E RESULTADOS ESPERADOS
+# [DADOS] DADOS E RESULTADOS ESPERADOS
 # ---------------------------------------------------------------
 
 # Dados de teste:
