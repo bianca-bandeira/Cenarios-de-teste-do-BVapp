@@ -1,0 +1,2 @@
+## Mini Projeto: Especificação de Cenários de Teste - BVapp
+Este repositório contém a documentação e organização de cenários de teste referentes aos requisitos funcionais do módulo financeiro no projeto BVapp.
