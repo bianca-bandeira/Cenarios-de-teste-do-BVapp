@@ -21,7 +21,6 @@ Autor: Bianca Rodrigues Bandeira
 # "Conta de energia da sede", parcela 1, não removida nem cancelada. O
 # pagamento da despesa é feito fora da plataforma.
 
-# [ANEXAR]
 # O ator acessa a parcela 1 da conta a pagar e escolhe a opção de anexar
 # comprovante.
 
@@ -44,14 +43,16 @@ Autor: Bianca Rodrigues Bandeira
 # O sistema atualiza a parcela com o status "Paga" e exibe uma mensagem de
 # sucesso.
 
-# [CONSULTAR]
+# ---------------------------------------------------------------
+# 🟠 [A1] - CONSULTAR 
 # O ator acessa a conta e visualiza a listagem de comprovantes.
 
 # O sistema exibe o comprovante, identificando a parcela e a data de envio, com o status "Aprovado".
 
 # O ator abre o comprovante e o sistema exibe o arquivo.
 
-# [SUBSTITUIR]
+# ---------------------------------------------------------------
+# 🟠 [A2] - SUBSTITUIR 
 # O ator seleciona o comprovante e escolhe a opção de substituir.
 
 # O ator troca o arquivo por "fatura_energia_v2.pdf" e altera o nome e as
@@ -61,7 +62,8 @@ Autor: Bianca Rodrigues Bandeira
 
 # O ator consulta o comprovante e verifica os novos dados.
 
-# [REMOVER]
+# ---------------------------------------------------------------
+# 🟠 [A3] - REMOVER 
 # O ator solicita a remoção do comprovante que sustenta o pagamento da
 # despesa.
 
@@ -75,7 +77,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A1] - PARCELA REMOVIDA OU CANCELADA
+# 🟠 [A4] - PARCELA REMOVIDA OU CANCELADA
 
 # O ator tenta anexar um comprovante a uma parcela de conta a pagar removida
 # e depois a uma cancelada.
@@ -84,7 +86,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A2] - ARQUIVO INVÁLIDO
+# 🟠 [A5] - ARQUIVO INVÁLIDO
 
 # O ator tenta enviar sem arquivo, sem nome, com formato .docx e com um
 # arquivo de 6 MB.
@@ -94,7 +96,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A3] - ANEXAR SEM OBSERVAÇÕES
+# 🟠 [A6] - ANEXAR SEM OBSERVAÇÕES
 
 # O ator deixa as observações vazias.
 
@@ -102,7 +104,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A4] - COMPROVANTE DO TESOUREIRO NÃO ENTRA NA FILA DE VALIDAÇÃO
+# 🟠 [A7] - COMPROVANTE DO TESOUREIRO NÃO ENTRA NA FILA DE VALIDAÇÃO
 
 # O ator acessa a fila de comprovantes pendentes de validação.
 
