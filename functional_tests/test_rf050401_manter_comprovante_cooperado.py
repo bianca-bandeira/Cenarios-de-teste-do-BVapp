@@ -20,7 +20,6 @@ Autor: Bianca Rodrigues Bandeira
 # da mensalidade "Mensalidade novembro/2026" com status "Aberta",
 # não paga e não removida. O pagamento é feito fora da plataforma.
 
-# [ANEXAR]
 # O ator acessa a sua conta referente a mensalidade, seleciona a parcela e
 # escolhe a opção de anexar comprovante.
 
@@ -41,7 +40,8 @@ Autor: Bianca Rodrigues Bandeira
 # O sistema mantém a parcela com o status "Aberta" e exibe uma mensagem de
 # sucesso. [RN3]
 
-# [CONSULTAR]
+# ---------------------------------------------------------------
+# 🟠 [A1] - CONSULTAR 
 # O ator acessa a conta e visualiza a listagem do[s] seu[s] comprovante[s].
 
 # O sistema exibe o comprovante com o nome, a parcela e o status "Em análise".
@@ -50,7 +50,8 @@ Autor: Bianca Rodrigues Bandeira
 
 # O sistema exibe o arquivo "comprovante_novembro.pdf".
 
-# [SUBSTITUIR]
+# ---------------------------------------------------------------
+# 🟠 [A2] - EDITAR
 # O ator seleciona o comprovante (status "Em análise") e escolhe a opção de
 # editar. [RN5]
 
@@ -65,7 +66,8 @@ Autor: Bianca Rodrigues Bandeira
 # O ator consulta novamente o comprovante e verifica que o arquivo, o nome e
 # as observações são os novos.
 
-# [REMOVER]
+# ---------------------------------------------------------------
+# 🟠 [A3] - REMOVER 
 # O ator seleciona o comprovante (status "Em análise") e escolhe a opção de
 # remover.
 
@@ -82,7 +84,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A1] - ANEXAR SEM OBSERVAÇÕES
+# 🟠 [A4] - ANEXAR SEM OBSERVAÇÕES
 
 # O ator preenche somente arquivo e nome, deixando as observações vazias.
 
@@ -91,7 +93,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A2] - ANEXAR EM PARCELA ATRASADA
+# 🟠 [A5] - ANEXAR EM PARCELA ATRASADA
 
 # O ator seleciona uma parcela de mensalidade com o status "Atrasada".
 
@@ -100,7 +102,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A3] - NOVO ENVIO APÓS REMOÇÃO
+# 🟠 [A6] - NOVO ENVIO APÓS REMOÇÃO
 
 # Depois de remover o comprovante (FP), o ator pode anexar um novo comprovante à
 # mesma parcela.
@@ -109,7 +111,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A4] - ALTERAR OU REMOVER COMPROVANTE APROVADO
+# 🟠 [A7] - ALTERAR OU REMOVER COMPROVANTE APROVADO
 
 # O ator seleciona um comprovante com o status "Aprovado" e tenta editá-lo
 # ou removê-lo.
@@ -119,7 +121,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A5] - ALTERAR OU REMOVER COMPROVANTE REJEITADO
+# 🟠 [A8] - ALTERAR OU REMOVER COMPROVANTE REJEITADO
 
 # O ator seleciona um comprovante com o status "Rejeitado" e tenta editá-lo
 # ou removê-lo.
@@ -132,7 +134,7 @@ Autor: Bianca Rodrigues Bandeira
 
 
 # ---------------------------------------------------------------
-# 🟠 [A6] - REMOVER COMPROVANTE QUE SUSTENTA PARCELA PAGA
+# 🟠 [A9] - REMOVER COMPROVANTE QUE SUSTENTA PARCELA PAGA
 
 # O ator tenta remover o comprovante de uma parcela com status "Paga".
 
